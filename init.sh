@@ -13,6 +13,7 @@ ln -s ~/dotfiles/.zshrc ~/.zshrc
 
 # node
 nvm install node
+npm i -g http-server
 # brew
 brew install yarn mpv cloc autojump
 # cask

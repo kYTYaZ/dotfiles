@@ -89,6 +89,6 @@ export NVM_DIR="$HOME/.nvm"
 
 DEFAULT_USER='zyy'
 
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status node_version)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status node_version ip)
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
