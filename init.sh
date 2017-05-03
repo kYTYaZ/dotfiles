@@ -1,3 +1,7 @@
+# Disable Gatekeeper
+sudo spctl --master-disable
+
+# base
 brew install curl wget
 
 # install nvm
@@ -13,6 +17,8 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # make symbolic links
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 
+# command-not-found
+brew tap homebrew/command-not-found
 # node
 nvm install node
 npm i -g http-server
