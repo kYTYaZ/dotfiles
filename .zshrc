@@ -51,7 +51,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-extras git-flow git-prompt nvm zsh-autosuggestions zsh-syntax-highlighting autojump command-not-found cp emoji)
+plugins=(git git-extras git-flow git-prompt zsh-autosuggestions zsh-syntax-highlighting autojump command-not-found cp emoji)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -88,4 +88,7 @@ DEFAULT_USER='zyy'
 
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status node_version ip)
 
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
