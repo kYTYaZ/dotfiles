@@ -44,7 +44,7 @@ fi
 
 # utils
 if ! exists http-server; then
-  npm i -g http-server
+  npm i -g http-server lerna
 fi
 if ! exists yarn; then
   brew install yarn
