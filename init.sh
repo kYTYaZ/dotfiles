@@ -1,3 +1,5 @@
+#!/bin/sh
+
 exists()
 {
   command -v "$1" >/dev/null 2>&1
@@ -21,17 +23,29 @@ if ! exists wget; then
 fi
 
 # oh-my-zsh
+rm -f ~/.zshrc
 if [ ! -d ~/.oh-my-zsh ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
+
+if [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel9k ]; then
   # theme powerlevel9k
-  git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+  git clone https://github.com/bhilburn/powerlevel9k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel9k
+fi
+
+if [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]; then
   # plugin zsh-autosuggestions
   git clone git://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+fi
+
+if [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]; then
   # plugin zsh-syntax-highlighting
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-  # symbolic link
-  ln -s ~/dotfiles/.zshrc ~/.zshrc
 fi
+
+# hard link
+rm -f ~/.zshrc
+ln ~/dotfiles/.zshrc ~/.zshrc
 
 # node
 if [ ! -d ~/.nvm ]; then
@@ -44,7 +58,7 @@ fi
 
 # utils
 if ! exists http-server; then
-  npm i -g http-server lerna
+  npm i -g http-server
 fi
 if ! exists yarn; then
   brew install yarn
