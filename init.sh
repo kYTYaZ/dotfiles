@@ -60,12 +60,19 @@ fi
 if ! exists http-server; then
   npm i -g http-server
 fi
+
 if ! exists yarn; then
   brew install yarn
 fi
+
 if ! exists cloc; then
   brew install cloc
 fi
+
 if ! exists autojump; then
   brew install autojump
+fi
+
+if ! exists nvim; then
+  brew install neovim
 fi
