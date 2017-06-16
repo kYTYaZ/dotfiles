@@ -86,7 +86,7 @@ source $ZSH/oh-my-zsh.sh
 
 DEFAULT_USER='zyy'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(node_version ip)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs node_version ip)
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
