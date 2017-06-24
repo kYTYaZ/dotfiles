@@ -65,6 +65,8 @@ if ! exists yarn; then
   brew install yarn
 fi
 
+yarn config set registry https://registry.npm.taobao.org -g
+
 if ! exists cloc; then
   brew install cloc
 fi
