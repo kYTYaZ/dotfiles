@@ -94,5 +94,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # alias for cnpm https://registry.npm.taobao.org
-# use tnpm behind...
+# use tnpm instead...
 alias cnpm="npm --registry=http://registry.npm.alibaba-inc.com"
