@@ -51,7 +51,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-extras git-flow git-prompt zsh-autosuggestions zsh-syntax-highlighting autojump command-not-found cp emoji)
+plugins=(git git-extras git-flow git-prompt zsh-autosuggestions zsh-syntax-highlighting autojump cp emoji)
 
 source $ZSH/oh-my-zsh.sh
 
