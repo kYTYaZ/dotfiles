@@ -1,3 +1,12 @@
+# https://github.com/robbyrussell/oh-my-zsh/issues/5327#issuecomment-241226195
+# debug mode, run the following line
+# zsh -xv
+
+# https://github.com/robbyrussell/oh-my-zsh/issues/5327#issuecomment-241226195
+# profile, uncomment the first following line and run the second following line
+# zmodload zsh/zprof
+# zsh -ic zprof
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -52,6 +61,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git git-extras git-flow git-prompt zsh-autosuggestions zsh-syntax-highlighting autojump cp emoji)
+# command-not-found is slow
 
 source $ZSH/oh-my-zsh.sh
 
@@ -84,15 +94,24 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# ui
 DEFAULT_USER='zyy'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs node_version ip)
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# nvm, please load when you need it
+loadnvm() {
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+}
+alias loadnvm="loadnvm"
 
+# npm
 # alias for cnpm https://registry.npm.taobao.org
 # use tnpm instead...
 alias cnpm="npm --registry=http://registry.npm.alibaba-inc.com"
+
+# history size
+# HISTSIZE=100
+# SAVEHIST=100
