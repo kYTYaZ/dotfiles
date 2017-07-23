@@ -110,7 +110,8 @@ alias loadnvm="loadnvm"
 # npm
 # alias for cnpm https://registry.npm.taobao.org
 # use tnpm instead...
-alias cnpm="npm --registry=http://registry.npm.alibaba-inc.com"
+alias cnpm="npm --registry=https://registry.npm.taobao.org"
+alias anpm="npm --registry=http://registry.npm.alibaba-inc.com"
 
 # history size
 # HISTSIZE=100
