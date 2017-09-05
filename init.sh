@@ -80,3 +80,7 @@ fi
 if ! exists nvim; then
   brew install neovim
 fi
+
+if ! exists jenv; then
+  brew install jenv
+fi

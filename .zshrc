@@ -116,3 +116,6 @@ alias anpm="npm --registry=http://registry.npm.alibaba-inc.com"
 # history size
 # HISTSIZE=100
 # SAVEHIST=100
+
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
