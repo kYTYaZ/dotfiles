@@ -121,3 +121,6 @@ alias anpm="npm --registry=http://registry.npm.alibaba-inc.com"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 jenv enable-plugin export
+
+# util
+alias cwd="pwd | tr -d '\n' | pbcopy"
