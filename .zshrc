@@ -99,6 +99,15 @@ DEFAULT_USER='zyy'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs node_version ip)
 
+# set tab title
+# https://webcache.googleusercontent.com/search?q=cache:ZA9fOk_5_isJ:https://gist.github.com/phette23/5270658+&cd=1&hl=en&ct=clnk&gl=us
+# https://superuser.com/questions/292652/change-iterm2-window-and-tab-titles-in-zsh
+# precmd is called just before the prompt is printed
+DISABLE_AUTO_TITLE="true"
+function precmd() {
+  echo -ne "\e]1;${PWD##*/}\a"
+}
+
 # nvm, please load when you need it
 loadnvm() {
   export NVM_DIR="$HOME/.nvm"
