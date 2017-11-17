@@ -135,4 +135,5 @@ jenv enable-plugin export
 # util
 alias cppwd="pwd | tr -d '\n' | pbcopy"
 # https://stackoverflow.com/questions/13322485/how-to-get-the-primary-ip-address-of-the-local-machine-on-linux-and-os-x/25851186#25851186
-alias cpip="ip route get 8.8.8.8 | head -1 | cut -d' ' -f8 | tr -d '\n' | pbcopy"
+alias findip="ip route get 8.8.8.8 | head -1 | cut -d' ' -f8"
+alias cpip="findip | tr -d '\n' | pbcopy"
