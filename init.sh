@@ -1,6 +1,7 @@
 #!/bin/sh
 
 sh ./git.sh
+sh ./git-personal.sh
 
 exists()
 {
