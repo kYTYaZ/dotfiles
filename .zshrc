@@ -128,9 +128,14 @@ alias anpm="npm --registry=http://registry.npm.alibaba-inc.com"
 # SAVEHIST=100
 
 # java
-export PATH="$HOME/.jenv/bin:$PATH"
+export PATH=$HOME/.jenv/bin:$PATH
 eval "$(jenv init -)"
 jenv enable-plugin export
+
+# go
+export GOPATH=$(go env GOPATH)
+export PATH=$PATH:$(go env GOPATH)/bin
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
 # util
 alias cppwd="pwd | tr -d '\n' | pbcopy"
