@@ -1,8 +1,5 @@
 #!/bin/sh
 
-sh ./git.sh
-sh ./git-personal.sh
-
 exists()
 {
   command -v "$1" >/dev/null 2>&1
@@ -18,6 +15,9 @@ if ! exists brew command command-not-found-init; then
 fi
 
 # base
+if ! exists git; then
+  brew install git
+fi
 if ! exists curl; then
   brew install curl
 fi
@@ -56,21 +56,16 @@ if [ ! -d ~/.nvm ]; then
 fi
 
 if ! exists node; then
-  nvm install node
+  brew install node
 fi
 
-# utils
-if ! exists http-server; then
-  npm i -g http-server
+if ! exists ip; then
+  brew install iproute2mac
 fi
 
 if ! exists yarn; then
   brew install yarn
 fi
-
-# set registry (taobao) https://registry.npm.taobao.org
-# use tnpm instead...
-yarn config set -g registry https://registry.npm.taobao.org
 
 if ! exists cloc; then
   brew install cloc
@@ -87,3 +82,14 @@ fi
 if ! exists jenv; then
   brew install jenv
 fi
+
+if ! exists http-server; then
+  npm i -g http-server
+fi
+
+# set registry (taobao) https://registry.npm.taobao.org
+# use tnpm instead...
+yarn config set -g registry https://registry.npm.taobao.org
+
+sh ./git.sh
+sh ./git-personal.sh
