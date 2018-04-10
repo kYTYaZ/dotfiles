@@ -17,6 +17,7 @@ export ZSH=~/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
+# ZSH_THEME="spaceship-prompt/spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -98,6 +99,11 @@ source $ZSH/oh-my-zsh.sh
 DEFAULT_USER='zyy'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs node_version ip)
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_PROMPT_ADD_NEWLINE_COUNT=3
+
+SPACESHIP_GIT_PREFIX=''
 
 # set tab title
 # deselect all the options for window and tab titles in the iterm->preferences->appearance section
@@ -109,20 +115,6 @@ function precmd() {
   echo -ne "\e]1;${PWD##*/}\a"
 }
 
-# nvm, please load when you need it
-loadnvm() {
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-}
-alias loadnvm="loadnvm"
-
-# npm
-# alias for cnpm https://registry.npm.taobao.org
-# use tnpm instead...
-alias cnpm="npm --registry=https://registry.npm.taobao.org"
-alias anpm="npm --registry=http://registry.npm.alibaba-inc.com"
-
 # history size
 # HISTSIZE=100
 # SAVEHIST=100
@@ -130,7 +122,7 @@ alias anpm="npm --registry=http://registry.npm.alibaba-inc.com"
 # java
 export PATH=$HOME/.jenv/bin:$PATH
 eval "$(jenv init -)"
-jenv enable-plugin export
+jenv enable-plugin export >/dev/null 2>&1
 
 # go
 # export GOPATH=$(go env GOPATH)
@@ -143,3 +135,20 @@ alias cppwd="pwd | tr -d '\n' | pbcopy"
 alias echoip="ip route get 8.8.8.8 | head -1 | cut -d' ' -f8"
 alias cpip="echoip | tr -d '\n' | pbcopy"
 alias debugios="remotedebug_ios_webkit_adapter --port 7259"
+
+# npm
+# alias for cnpm https://registry.npm.taobao.org
+# use tnpm instead...
+alias cnpm="npm --registry=https://registry.npm.taobao.org"
+alias anpm="npm --registry=http://registry.npm.alibaba-inc.com"
+
+# npx
+source <(npx --shell-auto-fallback zsh)
+
+# nvm, please load when you need it
+loadnvm() {
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+}
+alias loadnvm="loadnvm"
