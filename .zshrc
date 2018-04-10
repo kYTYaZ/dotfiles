@@ -133,12 +133,13 @@ eval "$(jenv init -)"
 jenv enable-plugin export
 
 # go
-export GOPATH=$(go env GOPATH)
-export PATH=$PATH:$(go env GOPATH)/bin
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
+# export GOPATH=$(go env GOPATH)
+# export PATH=$PATH:$(go env GOPATH)/bin
+# export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
 # util
 alias cppwd="pwd | tr -d '\n' | pbcopy"
 # https://stackoverflow.com/questions/13322485/how-to-get-the-primary-ip-address-of-the-local-machine-on-linux-and-os-x/25851186#25851186
 alias echoip="ip route get 8.8.8.8 | head -1 | cut -d' ' -f8"
 alias cpip="echoip | tr -d '\n' | pbcopy"
+alias debugios="remotedebug_ios_webkit_adapter --port 7259"
