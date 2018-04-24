@@ -138,7 +138,6 @@ alias debugios="remotedebug_ios_webkit_adapter --port 7259"
 
 # npm
 NPM_PREFIX=$(npm prefix -g)
-echo $NPM_PREFIX
 export PATH=$NPM_PREFIX/bin:$PATH
 # alias for cnpm https://registry.npm.taobao.org
 # use tnpm instead...
