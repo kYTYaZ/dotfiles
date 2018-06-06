@@ -104,6 +104,7 @@ POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 POWERLEVEL9K_PROMPT_ADD_NEWLINE_COUNT=3
 
 # spaceship
+# icons: https://fontawesome.com/cheatsheet
 # colors: https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg
 # Prompt
 SPACESHIP_PROMPT_ADD_NEWLINE="true"
