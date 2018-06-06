@@ -16,8 +16,8 @@ export ZSH=~/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
-# ZSH_THEME="spaceship-prompt/spaceship"
+# ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="spaceship-prompt/spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -95,7 +95,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# ui
+# powerlevel9k
 DEFAULT_USER='zyy'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs node_version ip)
@@ -103,7 +103,35 @@ POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 POWERLEVEL9K_PROMPT_ADD_NEWLINE_COUNT=3
 
-SPACESHIP_GIT_PREFIX=''
+# spaceship
+# colors: https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg
+# Prompt
+SPACESHIP_PROMPT_ADD_NEWLINE="true"
+SPACESHIP_PROMPT_SEPARATE_LINE="true"
+SPACESHIP_PROMPT_FIRST_PREFIX_SHOW="true"
+SPACESHIP_PROMPT_DEFAULT_PREFIX="$USER"
+# Char
+SPACESHIP_CHAR_SUFFIX=" "
+SPACESHIP_CHAR_SYMBOL="\uf0e7"
+SPACESHIP_CHAR_COLOR_SUCCESS="028"
+# Username
+SPACESHIP_USER_SHOW="true"
+SPACESHIP_USER_PREFIX=""
+# Hostname
+SPACESHIP_HOST_COLOR="018"
+SPACESHIP_HOST_COLOR_SSH="028"
+# Dir
+SPACESHIP_DIR_COLOR="044"
+# Git
+SPACESHIP_GIT_PREFIX=""
+SPACESHIP_GIT_BRANCH_COLOR="088"
+# Package Version
+SPACESHIP_PACKAGE_PREFIX=""
+# Node
+SPACESHIP_NODE_PREFIX=""
+SPACESHIP_NODE_COLOR="028"
+# Execution time
+SPACESHIP_EXEC_TIME_COLOR="226"
 
 # set tab title
 # deselect all the options for window and tab titles in the iterm->preferences->appearance section
