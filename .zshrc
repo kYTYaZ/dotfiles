@@ -175,8 +175,8 @@ export PATH=$NPM_PREFIX/bin:$PATH
 alias cnpm="npm --registry=https://registry.npm.taobao.org"
 alias anpm="npm --registry=http://registry.npm.alibaba-inc.com"
 
-# npx
-source <(npx --shell-auto-fallback zsh)
+# npx SHELL AUTO FALLBACK (is not working)
+# source <(npx --shell-auto-fallback zsh)
 
 # nvm, please load when you need it
 loadnvm() {
