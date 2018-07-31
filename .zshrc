@@ -166,6 +166,7 @@ alias cppwd="pwd | tr -d '\n' | pbcopy"
 alias echoip="ip route get 8.8.8.8 | head -1 | cut -d' ' -f8"
 alias cpip="echoip | tr -d '\n' | pbcopy"
 alias debugios="remotedebug_ios_webkit_adapter --port 7259"
+alias term-rec="terminalizer record demo -c ~/dotfiles/terminalizer-config.yml"
 
 # npm
 NPM_PREFIX=$(npm prefix -g)
