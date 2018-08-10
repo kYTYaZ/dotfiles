@@ -191,3 +191,6 @@ alias loadnvm="loadnvm"
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias chrome-canary="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary"
 alias chromium="/Applications/Chromium.app/Contents/MacOS/Chromium"
+
+# sublime
+alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
