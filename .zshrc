@@ -167,14 +167,16 @@ alias echoip="ip route get 8.8.8.8 | head -1 | cut -d' ' -f8"
 alias cpip="echoip | tr -d '\n' | pbcopy"
 alias debugios="remotedebug_ios_webkit_adapter --port 7259"
 alias term-rec="terminalizer record demo -c ~/dotfiles/terminalizer-config.yml"
+alias zminit="zm init --npmClient yarn"
 
 # npm
-NPM_PREFIX=$(npm prefix -g)
-export PATH=$NPM_PREFIX/bin:$PATH
+NPM_BIN_FOLDER=$(npm bin -g)
+export PATH=$NPM_BIN_FOLDER:$PATH
 # alias for cnpm https://registry.npm.taobao.org
 # use tnpm instead...
 alias cnpm="npm --registry=https://registry.npm.taobao.org"
 alias anpm="npm --registry=http://registry.npm.alibaba-inc.com"
+# yarn config set registry http://registry.npm.alibaba-inc.com -g
 
 # npx SHELL AUTO FALLBACK (is not working)
 # source <(npx --shell-auto-fallback zsh)
