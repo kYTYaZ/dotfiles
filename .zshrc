@@ -179,6 +179,8 @@ alias anpm="npm --registry=http://registry.npm.alibaba-inc.com"
 # yarn config set registry http://registry.npm.alibaba-inc.com -g
 
 # flutter
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 export PATH=~/work/flutter/bin:$PATH
 
 # npx SHELL AUTO FALLBACK (is not working)
