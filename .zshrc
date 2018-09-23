@@ -178,6 +178,9 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org"
 alias anpm="npm --registry=http://registry.npm.alibaba-inc.com"
 # yarn config set registry http://registry.npm.alibaba-inc.com -g
 
+# flutter
+export PATH=~/work/flutter/bin:$PATH
+
 # npx SHELL AUTO FALLBACK (is not working)
 # source <(npx --shell-auto-fallback zsh)
 
