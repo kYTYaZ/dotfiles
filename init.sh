@@ -51,9 +51,18 @@ if [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]; 
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 fi
 
-# hard link
+# hard links for zshrc
 rm -f ~/.zshrc
 ln ~/dotfiles/.zshrc ~/.zshrc
+# links for neovim
+# https://robots.thoughtbot.com/my-life-with-neovim#installing-and-configuring-neovim
+mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
+mkdir -p $XDG_CONFIG_HOME/nvim
+ln -s ~/.vim $XDG_CONFIG_HOME/nvim
+rm -f $XDG_CONFIG_HOME/nvim/init.vim
+rm -f ~/.vimrc
+ln ~/dotfiles/init.vim $XDG_CONFIG_HOME/nvim/init.vim
+ln ~/dotfiles/init.vim ~/.vimrc
 
 # node
 if [ ! -d ~/.nvm ]; then
@@ -98,25 +107,3 @@ yarn config set -g registry https://registry.npm.taobao.org
 
 sh ./git.sh
 sh ./git-personal.sh
-
-###
-### fonts start
-###
-
-# powerline
-# clone
-git clone https://github.com/powerline/fonts.git --depth=1
-# install
-cd fonts
-./install.sh
-# clean-up a bit
-cd ..
-rm -rf fonts
-
-# nerd font
-brew tap caskroom/fonts
-brew cask install font-hack-nerd-font
-
-###
-### fonts end
-###

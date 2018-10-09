@@ -201,3 +201,8 @@ alias chromium="/Applications/Chromium.app/Contents/MacOS/Chromium"
 
 # sublime
 alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+
+# vim
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
